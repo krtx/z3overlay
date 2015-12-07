@@ -13,7 +13,7 @@ module type SOLVER = sig
   type sat
   type _ term
 
-  val make : unit -> t
+  val make : Z3.Symbol.symbol option -> t
 
   val push : t -> unit
   val pop : t -> unit
@@ -176,6 +176,8 @@ module type S = sig
        and type 'a term := 'a term
 
     type handle
+
+    val make : unit -> t
 
     val add_soft :
       id:Z3.Symbol.symbol ->

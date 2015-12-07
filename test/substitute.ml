@@ -22,7 +22,7 @@ let () =
   in
   let t = T.substitute ~assigns t in
 
-  let solver = Solver.make () in
+  let solver = Solver.make None in
 
   Solver.add ~solver t;
 

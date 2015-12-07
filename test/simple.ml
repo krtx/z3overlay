@@ -10,7 +10,7 @@ let () =
   Printf.printf "\nSimple test!\n%!" ;
 
   (** We create a solver for future usage. *)
-  let solver = Solver.make () in
+  let solver = Solver.make None in
 
   (** We create new SMT variables and specify their types. *)
   let x = Symbol.declare Real "x" in

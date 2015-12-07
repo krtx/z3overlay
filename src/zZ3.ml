@@ -190,7 +190,7 @@ module Make (C : Context) = struct
 
     type t = solver
 
-    let make () = mk_simple_solver ctx
+    let make logic = mk_solver ctx logic
     let add ~solver x = add solver [x]
     let pop x = pop x 1
 
