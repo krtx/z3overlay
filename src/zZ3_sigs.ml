@@ -127,6 +127,10 @@ module type S = sig
     val to_string : 'a term -> string
     val raw : 'a term -> Z3.Expr.expr
 
+    val substitute_one : assign:('b term * 'b term) -> 'a term -> 'a term
+    (** `substitute` doesn't allow heterogeneous assignments. *)
+    val substitute : assigns:('b term * 'b term) list -> 'a term -> 'a term
+
   end
 
   module Z3Array : sig

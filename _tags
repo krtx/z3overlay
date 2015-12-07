@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 6426b9d85226338374b0cd567be576f0)
+# DO NOT EDIT (digest: fe31736e83dc725e7f2532883be19128)
 # Ignore VCS directories, you can use the same kind of rule outside
 # OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
@@ -26,6 +26,10 @@ true: annot, bin_annot
 "test/optim.native": pkg_Z3
 "test/optim.native": pkg_zarith
 "test/optim.native": use_Z3overlay
+# Executable test_substitute
+"test/substitute.native": pkg_Z3
+"test/substitute.native": pkg_zarith
+"test/substitute.native": use_Z3overlay
 <test/*.ml{,i,y}>: pkg_Z3
 <test/*.ml{,i,y}>: pkg_zarith
 <test/*.ml{,i,y}>: use_Z3overlay

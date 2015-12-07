@@ -136,6 +136,14 @@ module Make (C : Context) = struct
         | Bool -> bool x
         | Array (_,_) -> raise @@ Error "Can't reify an array"
 
+    let substitute_one ~assign:(e1, e2) t = Expr.substitute_one t e1 e2
+    let substitute ~assigns t =
+      let rec loop acc = function
+      | []             -> acc
+      | assign :: rest -> loop (substitute_one ~assign acc) rest
+      in
+      loop t assigns
+
   end
 
 

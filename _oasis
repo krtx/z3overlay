@@ -46,6 +46,19 @@ Test optim
   TestTools: test_optim
   Run$: flag(tests)
 
+Executable test_substitute
+  Path: test
+  Build$: flag(tests)
+  Install: false
+  MainIs: substitute.ml
+  BuildDepends: Z3overlay
+  CompiledObject: native
+
+Test substitute
+  Command: $test_substitute
+  TestTools: test_substitute
+  Run$: flag(tests)
+
 
 ## Doc ##
 AlphaFeatures: ocamlbuild_more_args
