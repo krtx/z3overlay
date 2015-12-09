@@ -100,6 +100,8 @@ module type S = sig
     val mod_ : [< zint ] term -> [< zint ] term -> [> zint ] term
     val rem : [< znum ] term -> [< znum ] term -> [> znum ] term
 
+    val pow : ([< znum ] as 'a) term -> 'a term -> 'a term
+
     val ( ! ) : (_,'a) symbol -> 'a term
     val ( = ) : 'a term -> 'a term -> [> zbool] term
     val ( <> ) : 'a term -> 'a term -> [> zbool] term
@@ -119,6 +121,7 @@ module type S = sig
     val ( - ) : ([< znum ] as 'a) term -> 'a term -> 'a term
     val ( * ) : ([< znum ] as 'a) term -> 'a term -> 'a term
     val ( / ) : ([< znum ] as 'a) term -> 'a term -> 'a term
+    val ( ^ ) : ([< znum ] as 'a) term -> 'a term -> 'a term
 
     val ( mod ) : [< zint ] term -> [< zint ] term -> [> zint ] term
 

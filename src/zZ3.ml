@@ -100,6 +100,8 @@ module Make (C : Context) = struct
     let mod_ t1 t2 = Arithmetic.Integer.mk_mod ctx t1 t2
     let rem t1 t2  = Arithmetic.Integer.mk_rem ctx t1 t2
 
+    let pow t1 t2 = Arithmetic.mk_power ctx t1 t2
+
     let ( ! ) x = symbol x
     let ( = ) x y = eq x y
     let ( <> ) x y = distinct [x ; y]
@@ -119,6 +121,7 @@ module Make (C : Context) = struct
     let ( - ) x y = sub [ x ; y ]
     let ( * ) x y = mul [ x ; y ]
     let ( / ) x y = div x y
+    let ( ^ ) x y = pow x y
 
     let ( mod ) x y = mod_ x y
 
